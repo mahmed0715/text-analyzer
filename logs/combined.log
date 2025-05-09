@@ -1,0 +1,14 @@
+[2025-05-09 22:18:24] INFO: Server running on port 3000
+[2025-05-09 22:18:40] INFO: ::1 - - [09/May/2025:16:18:40 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:18:51] INFO: ::1 - - [09/May/2025:16:18:51 +0000] "GET /api/texts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:19:04] INFO: ::1 - - [09/May/2025:16:19:04 +0000] "POST /api/texts HTTP/1.1" 201 208 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:19:04] INFO: ::1 - - [09/May/2025:16:19:04 +0000] "GET /api/texts HTTP/1.1" 200 1353 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:31:09] INFO: Server running on port 3000
+[2025-05-09 22:31:15] INFO: ::1 - - [09/May/2025:16:31:15 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:31:23] INFO: ::1 - - [09/May/2025:16:31:23 +0000] "GET /api/texts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:31:27] INFO: ::1 - - [09/May/2025:16:31:27 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:31:29] INFO: ::1 - - [09/May/2025:16:31:29 +0000] "GET /api/texts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:31:35] INFO: ::1 - - [09/May/2025:16:31:35 +0000] "POST /api/texts HTTP/1.1" 201 208 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:31:35] INFO: ::1 - - [09/May/2025:16:31:35 +0000] "GET /api/texts HTTP/1.1" 200 1562 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:32:10] INFO: ::1 - - [09/May/2025:16:32:10 +0000] "GET / HTTP/1.1" 200 4314 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+[2025-05-09 22:32:12] INFO: ::1 - - [09/May/2025:16:32:12 +0000] "GET /api/texts HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
