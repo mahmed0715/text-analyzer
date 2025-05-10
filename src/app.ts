@@ -6,6 +6,8 @@ import logger from "./utils/logger";
 import fs from "fs";
 import { apiLimiter } from "./middleware/rate-limiter";
 import helmet from "helmet";
+import authRouter from "./routes/auth.route";
+import { authenticate } from "./middleware/authMiddleware";
 const logDir = path.join(__dirname, "../logs");
 if (!fs.existsSync(logDir)) {
   fs.mkdirSync(logDir);
@@ -38,7 +40,8 @@ app.use(
 // Your routes and other middleware
 
 app.use(express.json());
-app.use("/api/texts", analysisRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/texts", authenticate, analysisRouter);
 // Catch / route to serve index.html for SPA
 app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));

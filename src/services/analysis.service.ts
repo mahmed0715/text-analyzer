@@ -3,9 +3,10 @@ import { TextAnalyzer } from "./text-analyzer";
 
 const prisma = new PrismaClient();
 
-export const createAnalysis = async (content: string) => {
+export const createAnalysis = async (userId: string, content: string) => {
   return prisma.textAnalysis.create({
     data: {
+      userId,
       content,
       words: TextAnalyzer.countWords(content),
       characters: TextAnalyzer.countCharacters(content),
@@ -16,13 +17,25 @@ export const createAnalysis = async (content: string) => {
   });
 };
 
-export const getAnalysis = async (id: string) => {
-  return prisma.textAnalysis.findUnique({ where: { id } });
+export const getAnalysis = async (userId: string, id: string) => {
+  return prisma.textAnalysis.findFirst({
+    where: {
+      id,
+      userId,
+    },
+  });
 };
 
-export const updateAnalysis = async (id: string, content: string) => {
-  return prisma.textAnalysis.update({
-    where: { id },
+export const updateAnalysis = async (
+  userId: string,
+  id: string,
+  content: string
+) => {
+  return prisma.textAnalysis.updateMany({
+    where: {
+      id,
+      userId,
+    },
     data: {
       content,
       words: TextAnalyzer.countWords(content),
@@ -34,10 +47,22 @@ export const updateAnalysis = async (id: string, content: string) => {
   });
 };
 
-export const deleteAnalysis = async (id: string) => {
-  return prisma.textAnalysis.delete({ where: { id } });
+export const deleteAnalysis = async (userId: string, id: string) => {
+  return prisma.textAnalysis.deleteMany({
+    where: {
+      id,
+      userId,
+    },
+  });
 };
 
-export const getAllAnalyses = async () => {
-  return prisma.textAnalysis.findMany();
+export const getAllAnalyses = async (userId: string) => {
+  return prisma.textAnalysis.findMany({
+    where: {
+      userId,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
 };
