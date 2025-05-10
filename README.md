@@ -94,14 +94,17 @@ Coverage reports will be available in the `/coverage` folder.
 ## 📁 Project Structure
 
 ```
+/prisma
 /src
-  ├── analyzer        # TextAnalyzer logic
+
+  ├── server.ts # server file
+  ├── app.ts        # express app file
   ├── controllers     # Express route handlers
   ├── services        # Business logic
   ├── routes          # Route definitions
-  ├── tests           # Jest test files
-  └── prisma          # Prisma schema & migrations
-index.html            # Frontend UI
+  ├── __tests__           # Jest test files
+  └──           
+public/index.html            # Frontend UI
 ```
 
 ---
