@@ -1,18 +1,20 @@
-import { PrismaClient } from "@prisma/client";
-import { TextAnalyzer } from "./text-analyzer";
+import { PrismaClient } from '@prisma/client';
+import { TextAnalyzer } from './text-analyzer';
 
 const prisma = new PrismaClient();
 
 export const createAnalysis = async (userId: string, content: string) => {
   return prisma.textAnalysis.create({
     data: {
-      userId,
+      user: {
+        connect: { id: userId },
+      },
       content,
       words: TextAnalyzer.countWords(content),
       characters: TextAnalyzer.countCharacters(content),
       sentences: TextAnalyzer.countSentences(content),
       paragraphs: TextAnalyzer.countParagraphs(content),
-      longestWords: TextAnalyzer.findLongestWords(content).join(", "),
+      longestWords: TextAnalyzer.findLongestWords(content).join(', '),
     },
   });
 };
@@ -20,17 +22,12 @@ export const createAnalysis = async (userId: string, content: string) => {
 export const getAnalysis = async (userId: string, id: string) => {
   return prisma.textAnalysis.findFirst({
     where: {
-      id,
-      userId,
+      AND: [{ id }, { userId }],
     },
   });
 };
 
-export const updateAnalysis = async (
-  userId: string,
-  id: string,
-  content: string
-) => {
+export const updateAnalysis = async (userId: string, id: string, content: string) => {
   return prisma.textAnalysis.updateMany({
     where: {
       id,
@@ -42,7 +39,7 @@ export const updateAnalysis = async (
       characters: TextAnalyzer.countCharacters(content),
       sentences: TextAnalyzer.countSentences(content),
       paragraphs: TextAnalyzer.countParagraphs(content),
-      longestWords: TextAnalyzer.findLongestWords(content).join(", "),
+      longestWords: TextAnalyzer.findLongestWords(content).join(', '),
     },
   });
 };
@@ -50,8 +47,7 @@ export const updateAnalysis = async (
 export const deleteAnalysis = async (userId: string, id: string) => {
   return prisma.textAnalysis.deleteMany({
     where: {
-      id,
-      userId,
+      AND: [{ id }, { userId }],
     },
   });
 };
@@ -62,7 +58,7 @@ export const getAllAnalyses = async (userId: string) => {
       userId,
     },
     orderBy: {
-      createdAt: "desc",
+      createdAt: 'desc',
     },
   });
 };
