@@ -17,7 +17,7 @@ A full-stack Node.js + HTML/CSS application that allows users to store and analy
 - ❌ Delete analysis by ID
 - ⚡ Caching for repeated analyses
 - 🧪 100% Test-Driven Development with coverage reports
-- 📈 Log visualization enabled in backend
+- 📈 Log visualization enabled in backend, with winston transport to file as well as logzio platform. check code in logger.ts
 - ✅ Built using clean architecture and reusable service layers
 
 ---
@@ -28,8 +28,8 @@ A full-stack Node.js + HTML/CSS application that allows users to store and analy
 - **Database:** SQLite (via Prisma ORM)
 - **Frontend:** HTML, CSS, JavaScript
 - **Testing:** Jest
-- **Logging:** Console logs
-- **Caching:** In-memory store (Node.js)
+- **Logging:** Winston logs, cmd+file+logzio
+- **Caching:** In-memory store (Node-cache)
 
 ---
 
@@ -64,7 +64,7 @@ The app runs at `http://localhost:3000`.
 
 ---
 
-## 🔍 API Endpoints
+## 🔍 Used API Endpoints
 
 | Method | Endpoint            | Description                  |
 | ------ | ------------------- | ---------------------------- |
@@ -135,4 +135,4 @@ MIT License
 
 ## 👨‍💻 Author
 
-Built by [Your Name] as part of a technical assessment.
+Built by Mustak Ahmed as part of a technical assessment.
