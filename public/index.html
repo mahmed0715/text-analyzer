@@ -4,31 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Text Analyzer</title>
-  <style>
-    body { font-family: Arial; padding: 20px; max-width: 800px; margin: auto; }
-    textarea { width: 100%; height: 150px; margin-bottom: 10px; }
-    button { margin-right: 10px; }
-    .results, .history { margin-top: 20px; }
-    .history-item { border-bottom: 1px solid #ddd; padding: 5px 0; }
-  </style>
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
- 
+  <div class="container">
+    <header class="header">
+      <h1>Text Analyzer Tool</h1>
+      <button id="logout-btn" class="btn logout-btn">Logout</button>
+    </header>
 
-  <h1>Text Analyzer Tool</h1>
-  <textarea id="textInput" placeholder="Enter your text here..."></textarea><br/>
-  <button id="analyze-btn">Analyze</button>
-  <button id="loadHistory-btn">Load History</button>
-  <button id="logout-btn" >Logout</button>
+    <main class="main-content">
+      <section class="input-section">
+        <textarea 
+          id="textInput" 
+          placeholder="Enter your text here..."
+          class="text-input"
+        ></textarea>
+        <div class="button-group">
+          <button id="analyze-btn" class="btn primary">Analyze</button>
+          <button id="clear-btn" class="btn secondary">Clear Text</button>
+          <button id="loadHistory-btn" class="btn secondary">Load History</button>
+        </div>
+      </section>
 
-  <div class="results">
-    <h2>Analysis Result</h2>
-    <pre id="result"></pre>
-  </div>
+      <section class="results-section">
+        <h2>Analysis Result</h2>
+        <div class="result-display" id="result"></div>
+      </section>
 
-  <div class="history">
-    <h2>Saved Analyses</h2>
-    <div id="history-list"></div>
+      <section class="history-section">
+        <h2>Saved Analyses</h2>
+        <div id="history-list" class="history-list"></div>
+      </section>
+    </main>
   </div>
 
   <script src="index.js"></script>
