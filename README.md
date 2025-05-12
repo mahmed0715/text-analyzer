@@ -88,6 +88,8 @@ npm run test:coverage
 ```
 
 Coverage reports will be available in the `/coverage` folder.
+Test result
+![image](https://github.com/user-attachments/assets/55783e88-b62d-4c01-af9e-3643db2c3efc)
 
 ---
 
